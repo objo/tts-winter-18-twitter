@@ -10,7 +10,7 @@ User.find_or_create_by!(
   first_name: "Joe",
   last_name:  "O'Brien",
   username: "objo",
-  bio: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  bio: "Lorem ipsum dolnthor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   city: "Westerville", 
   state: "Ohio",
 )
