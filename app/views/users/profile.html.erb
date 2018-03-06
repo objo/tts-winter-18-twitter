@@ -9,4 +9,11 @@
 
 <div class="right_side">
   
+  <% @user.tweets.each do |tweet| %>
+    <div class="tweet">
+      <p><%= tweet.message %></p>
+      <p>created: <%= time_ago_in_words(tweet.created_at) %> ago</p>
+    </div>
+  <% end %>
+  
 </div>
