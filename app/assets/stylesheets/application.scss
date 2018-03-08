@@ -1,0 +1,35 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.left_side {
+  float: left;
+  width: 20%;
+}
+
+.right_side {
+  float: right;
+  width: 70%;
+}
+
+.tweet {
+  border: 1px solid black;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.tweet-date {
+  font-size: 10px;
+  color: #cecbcb;
+}
+
+.user { 
+  margin: 10px;
+  float: left;
+}
+
+
+
+
+
+
+

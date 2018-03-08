@@ -6,6 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+SOURCE = [ Faker::Seinfeld, Faker::SiliconValley, Faker::StarWars, Faker::HarryPotter ]
+
+def create_messages(u)
+  u.tweets.destroy_all
+  puts "Creating tweets"
+  20.times do 
+    putc '.'
+    u.tweets.create!(
+      message: SOURCE.sample.quote, 
+      created_at: Faker::Date.between(2.months.ago, Time.now)
+    )
+  end
+end
+  
+
 User.destroy_all
 
 u = User.create!(
@@ -20,20 +35,40 @@ u = User.create!(
   state: "Ohio",
 )
 
-u.tweets.destroy_all
+create_messages(u)
 
-source = [ Faker::Seinfeld, Faker::SiliconValley, Faker::StarWars, Faker::HarryPotter ]
-
-puts "Creating tweets"
 20.times do 
-  putc '.'
-  u.tweets.create!(
-    message: source.sample.quote, 
-    created_at: Faker::Date.between(2.months.ago, Time.now)
+
+  u = User.create!(
+    first_name: Faker::Name.first_name,
+    last_name:  Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: 'dont care',
+    password_confirmation: 'dont care',
+    username: Faker::Internet.user_name(5..10),
+    bio: Faker::Lorem.sentences(4),
+    city: Faker::Address.city, 
+    state: Faker::Address.state_abbr,
   )
+  
+  create_messages(u)
 end
 
 puts "done"
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 
 
 

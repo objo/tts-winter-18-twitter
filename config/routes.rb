@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'users#profile'
   
   get "/users/profile" => "users#profile", as: :users_profile
+  
+  get "/users/all" => "users#all", as: :users
 end

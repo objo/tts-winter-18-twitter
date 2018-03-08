@@ -12,6 +12,11 @@
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"> <%= alert  %></p>
+      
+      <ul>
+        <li><%= link_to "Home", root_url %></li>
+        <li><%= link_to "Users", users_url %></li>
+      </ul>
       <%= yield %>
     </div>
   </body>
