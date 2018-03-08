@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   
   get "/users/all" => "users#all", as: :users
   get "/users/:id" => 'users#show', as: :user
+  
+  get "/follow/:id" => 'users#follow', as: :follow_user
 end

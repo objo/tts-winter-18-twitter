@@ -13,5 +13,13 @@ class UsersController < ApplicationController
     @user = User.find(params['id'])
     render 'profile'
   end
+  
+  def follow
+    unless current_user.following.include?(params['id'])
+      current_user.following << params['id']
+      current_user.save!
+    end
+    redirect_to user_path(params['id'])
+  end
 
 end

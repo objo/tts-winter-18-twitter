@@ -6,6 +6,8 @@ class User < ApplicationRecord
   
   has_many :tweets
   
+  serialize :following, Array
+  
   def full_name
     "#{first_name} #{last_name}"
   end
