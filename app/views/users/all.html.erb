@@ -2,6 +2,6 @@
 <% @users.each do |user| %>
   <div class="user">
     <%= image_tag "default_user.png", alt: "Default User Image", height: '100px' %>
-    <p>@<%= user.username %></p>
+    <p><%= link_to "@#{user.username}", user_path(user.id) %></p>
   </div>
 <% end %>

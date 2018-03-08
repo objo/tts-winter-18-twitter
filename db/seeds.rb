@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-SOURCE = [ Faker::Seinfeld, Faker::SiliconValley, Faker::StarWars, Faker::HarryPotter ]
+SOURCE = [ Faker::Seinfeld, Faker::StarWars, Faker::HarryPotter ]
 
 def create_messages(u)
   u.tweets.destroy_all
@@ -46,7 +46,7 @@ create_messages(u)
     password: 'dont care',
     password_confirmation: 'dont care',
     username: Faker::Internet.user_name(5..10),
-    bio: Faker::Lorem.sentences(4),
+    bio: Faker::Lorem.sentences(4).join(" "),
     city: Faker::Address.city, 
     state: Faker::Address.state_abbr,
   )

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/users/profile" => "users#profile", as: :users_profile
   
   get "/users/all" => "users#all", as: :users
+  get "/users/:id" => 'users#show', as: :user
 end
