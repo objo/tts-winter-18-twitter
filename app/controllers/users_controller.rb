@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   
   def profile
     @user = current_user
+    @tweets = Tweet.where(user_id: current_user.following.push(current_user.id))
   end
   
   def all
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params['id'])
+    @tweets = @user.tweets
     render 'profile'
   end
   
@@ -21,5 +23,20 @@ class UsersController < ApplicationController
     end
     redirect_to user_path(params['id'])
   end
+  
+  def unfollow 
+    current_user.following.delete(params['id'])
+    current_user.save!
+    redirect_to user_path(params['id'])
+  end
 
 end
+
+
+
+
+
+
+
+
+
