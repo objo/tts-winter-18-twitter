@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  validates :username, uniqueness: true
+  
   has_many :tweets
   
   serialize :following, Array
