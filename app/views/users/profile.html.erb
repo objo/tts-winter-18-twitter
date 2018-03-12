@@ -17,7 +17,8 @@
 <div class="right_side">
   <div class="tweet_form">
     <%= form_for @tweet do |f|  %>
-
+      <%= render "shared/form_errors", model: @tweet %>
+      
       <%= f.label :message %>
       <br>
       <%= f.text_area :message %>
