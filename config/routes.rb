@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get "/follow/:id" => 'users#follow', as: :follow_user
   get "/unfollow/:id" => 'users#unfollow', as: :unfollow_user
   
-  resources :tweets
+  post "/tweets" => 'tweets#create', as: :tweets
 end
