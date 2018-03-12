@@ -14,7 +14,7 @@ def create_messages(u)
   20.times do 
     putc '.'
     u.tweets.create!(
-      message: SOURCE.sample.quote, 
+      message: SOURCE.sample.quote.truncate(140), 
       created_at: Faker::Date.between(2.months.ago, Time.now)
     )
   end
