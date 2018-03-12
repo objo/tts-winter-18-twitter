@@ -15,6 +15,16 @@
 </div>
 
 <div class="right_side">
+  <div class="tweet_form">
+    <%= form_for @tweet do |f|  %>
+
+      <%= f.label :message %>
+      <br>
+      <%= f.text_area :message %>
+      <br>
+      <%= f.submit "Tweet it!" %>
+    <% end %>    
+  </div>
   
   <% @tweets.each do |tweet| %>
     <div class="tweet">

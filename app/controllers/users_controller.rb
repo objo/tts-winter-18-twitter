@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def profile
     @user = current_user
     @tweets = Tweet.where(user_id: current_user.following.push(current_user.id))
+    @tweet = Tweet.new
   end
   
   def all
