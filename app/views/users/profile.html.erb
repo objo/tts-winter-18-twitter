@@ -1,5 +1,9 @@
 <div class="left_side">
-  <%= image_tag "default_user.png", alt: "Default User Image", height: '100px' %>
+  <% if @user.avatar.url.blank? %>
+    <%= image_tag "default_user.png", alt: "Default User Image", height: '100px' %>
+  <% else %>
+    <%= @user.avatar.url(:medium) %>
+  <% end %>
   <p>@<%= @user.username %></p>
   <p><%= @user.full_name %></p>
   <p><%= @user.location %></p>

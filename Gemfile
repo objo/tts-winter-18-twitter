@@ -59,3 +59,4 @@ gem 'faker', '~> 1.8.7'
 gem 'devise', '~> 4.4.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem "paperclip", "~> 5.2.1"

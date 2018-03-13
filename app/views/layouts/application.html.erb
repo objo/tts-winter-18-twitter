@@ -16,6 +16,7 @@
       <ul>
         <li><%= link_to "Home", root_url %></li>
         <li><%= link_to "Users", users_url %></li>
+        <li><%= link_to "Signout", destroy_user_session_path, method: :delete %></li>
       </ul>
       <%= yield %>
     </div>
