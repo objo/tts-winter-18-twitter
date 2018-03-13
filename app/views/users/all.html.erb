@@ -1,7 +1,11 @@
 
 <% @users.each do |user| %>
   <div class="user">
-    <%= image_tag "default_user.png", alt: "Default User Image", height: '100px' %>
+    <% if user.avatar.url.nil? %>
+      <%= image_tag 'default_user.png', height: '100px' %>
+    <% else %>
+      <%= image_tag user.avatar.url, height: '100px' %>
+    <% end %>
     <p><%= link_to "@#{user.username}", user_path(user.id) %></p>
   </div>
 <% end %>

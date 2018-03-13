@@ -37,7 +37,7 @@ u = User.create!(
 
 create_messages(u)
 
-20.times do 
+20.times do |iteration|
 
   u = User.create!(
     first_name: Faker::Name.first_name,
@@ -51,7 +51,11 @@ create_messages(u)
     state: Faker::Address.state_abbr,
   )
   
+  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{iteration + 1}.jpeg").open
+  
   create_messages(u)
+  
+  u.save!
 end
 
 puts "done"

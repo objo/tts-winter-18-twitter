@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  mount_uploader :avatar, AvatarUploader
+  
   validates :username, uniqueness: true
   
   has_many :tweets

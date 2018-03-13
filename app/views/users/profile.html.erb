@@ -1,5 +1,9 @@
 <div class="left_side">
-  <%= image_tag "default_user.png", alt: "Default User Image", height: '100px' %>
+  <% if @user.avatar.url.present? %>
+    <%= image_tag @user.avatar.url, height: '100px' %>
+  <% else %>
+    <%= image_tag "default_user.png", alt: "Default User Image", height: '100px' %>
+  <% end %>
   <p>@<%= @user.username %></p>
   <p><%= @user.full_name %></p>
   <p><%= @user.location %></p>
@@ -15,17 +19,19 @@
 </div>
 
 <div class="right_side">
-  <div class="tweet_form">
-    <%= form_for @tweet do |f|  %>
-      <%= render "shared/form_errors", model: @tweet %>
-      
-      <%= f.label :message %>
-      <br>
-      <%= f.text_area :message %>
-      <br>
-      <%= f.submit "Tweet it!" %>
-    <% end %>    
-  </div>
+  <% if @user.id == current_user.id %>
+    <div class="tweet_form">
+      <%= form_for @tweet do |f|  %>
+        <%= render "shared/form_errors", model: @tweet %>
+        
+        <%= f.label :message %>
+        <br>
+        <%= f.text_area :message %>
+        <br>
+        <%= f.submit "Tweet it!" %>
+      <% end %>    
+    </div>
+  <% end %>
   
   <% @tweets.each do |tweet| %>
     <div class="tweet">
