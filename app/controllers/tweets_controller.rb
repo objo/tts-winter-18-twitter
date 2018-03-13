@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   
   def create
     @tweet = current_user.tweets.create(tweet_params)
-    if @tweet.save
+    if @tweet.persisted?
       redirect_to users_profile_path
     else 
       @user = current_user 
