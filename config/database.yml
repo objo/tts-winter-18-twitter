@@ -22,4 +22,8 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: twitter
+  username: myapp
+  password: "something"
+  adapter: postgresql
+  pool: 5
