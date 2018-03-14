@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   
   def all
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @users.to_json }
+    end
   end
   
   def show
