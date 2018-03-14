@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params['id'])
     @tweets = @user.tweets
+    @tweet = Tweet.new
     render 'profile'
   end
   
@@ -34,7 +35,6 @@ class UsersController < ApplicationController
     current_user.save!
     redirect_to user_path(params['id'])
   end
-
 end
 
 
