@@ -23,7 +23,7 @@ test:
 production:
   <<: *default
   database: twitter
-  username: myapp
-  password: "something"
+  username: ccpaezpdrfwxuq
+  password: "9f7f27481aa47529d2643d630e80e5bea14afe4eeb0b7055cb2e8efa13243303"
   adapter: postgresql
   pool: 5
