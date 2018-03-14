@@ -26,4 +26,3 @@ production:
   database: twitter_prod
   username: twitter
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
-  pool: 5
