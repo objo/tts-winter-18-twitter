@@ -51,7 +51,7 @@ create_messages(u)
     state: Faker::Address.state_abbr,
   )
   
-  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{iteration + 1}.jpeg").open
+#  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{iteration + 1}.jpeg").open
   
   create_messages(u)
   
