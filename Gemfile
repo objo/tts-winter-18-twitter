@@ -50,7 +50,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :production do 
+group :production do
   gem 'pg'
 end
 
@@ -64,3 +64,5 @@ gem 'devise', '~> 4.4.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
+gem 'figaro'
+gem "fog-aws"

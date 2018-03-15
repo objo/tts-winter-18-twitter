@@ -11,15 +11,15 @@ SOURCE = [ Faker::Seinfeld, Faker::StarWars, Faker::HarryPotter ]
 def create_messages(u)
   u.tweets.destroy_all
   puts "Creating tweets"
-  20.times do 
+  20.times do
     putc '.'
     u.tweets.create!(
-      message: SOURCE.sample.quote.truncate(140), 
+      message: SOURCE.sample.quote.truncate(140),
       created_at: Faker::Date.between(2.months.ago, Time.now)
     )
   end
 end
-  
+
 
 User.destroy_all
 
@@ -31,7 +31,7 @@ u = User.create!(
   password_confirmation: '12345678',
   username: "objo",
   bio: "Lorem ipsum dolnthor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  city: "Westerville", 
+  city: "Westerville",
   state: "Ohio",
 )
 
@@ -47,37 +47,15 @@ create_messages(u)
     password_confirmation: 'dont care',
     username: Faker::Internet.user_name(5..10),
     bio: Faker::Lorem.sentences(4).join(" "),
-    city: Faker::Address.city, 
+    city: Faker::Address.city,
     state: Faker::Address.state_abbr,
   )
-  
-#  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{iteration + 1}.jpeg").open
-  
+
+  u.avatar = Rails.root.join("app/assets/images/stock-profile-#{iteration + 1}.jpeg").open
+
   create_messages(u)
-  
+
   u.save!
 end
 
 puts "done"
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
