@@ -66,3 +66,7 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'figaro'
 gem "fog-aws"
+
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'rails-controller-testing'
