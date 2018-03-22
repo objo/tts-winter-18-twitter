@@ -14,5 +14,12 @@ describe User do
     expect(user.location).to eq('Westerville, OH')
   end
   
+  it "validates uniqueness of name" do 
+    validate_uniqueness_of :username 
+  end
+  
+  it "has many tweets" do 
+    have_many :tweets
+  end
   
 end

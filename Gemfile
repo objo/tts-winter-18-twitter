@@ -54,6 +54,13 @@ group :production do
   gem 'pg'
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -66,7 +73,3 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'figaro'
 gem "fog-aws"
-
-gem 'rspec-rails'
-gem 'factory_bot_rails'
-gem 'rails-controller-testing'
