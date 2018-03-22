@@ -15,7 +15,6 @@ class Tweet < ApplicationRecord
     message.split.each do |word| 
       if word.starts_with?('#')
         c = Category.find_or_create_by(name: word.slice(1, word.length))
-        puts "[DBG] Creating category #{word}"
         tags.create(category: c)
       end
     end
