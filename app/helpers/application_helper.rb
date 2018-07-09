@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def current_user
+    User.find_by_email("joe@objo.com")
+  end
+  
   def us_states
     [
       ['Alabama', 'AL'],
